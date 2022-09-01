@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>demo sdk</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="demo sdk">
+    
+    <link rel="preload" href="/sdk-guid/assets/css/0.styles.1950effb.css" as="style"><link rel="preload" href="/sdk-guid/assets/js/app.89ed8e5d.js" as="script"><link rel="preload" href="/sdk-guid/assets/js/2.3c2e6582.js" as="script"><link rel="preload" href="/sdk-guid/assets/js/9.e68097ac.js" as="script"><link rel="prefetch" href="/sdk-guid/assets/js/3.00931c64.js"><link rel="prefetch" href="/sdk-guid/assets/js/4.da8b72e6.js"><link rel="prefetch" href="/sdk-guid/assets/js/5.048c6337.js"><link rel="prefetch" href="/sdk-guid/assets/js/6.29f38f88.js"><link rel="prefetch" href="/sdk-guid/assets/js/7.6565079b.js"><link rel="prefetch" href="/sdk-guid/assets/js/8.d8d44085.js">
+    <link rel="stylesheet" href="/sdk-guid/assets/css/0.styles.1950effb.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/sdk-guid/" class="home-link router-link-active"><!----> <span class="site-name">demo sdk</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/sdk-guid/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/sdk-guid/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/sdk-guid/demoSDK.html" class="sidebar-link">DemoSDK文档</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="proxy"><a href="#proxy" class="header-anchor">#</a> proxy</h1> <ul><li>step1. 根绝后端提供的jar包， maven坐标， 在config.js 中配置 服务的依赖</li> <li>step2. 执行tnpm run proxy 则生成了service代码</li></ul> <h1 id="middleware"><a href="#middleware" class="header-anchor">#</a> middleware</h1> <div class="language-js extra-class"><pre class="language-js"><code>    <span class="token comment">// 导出一个函数， 函数内部再return 函数， 接收 ctx 和nextd</span>
+    <span class="token comment">// app/middleware/response_time.js</span>
+    module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">responseTime</span><span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> start <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> cost <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start<span class="token punctuation">;</span>
+        ctx<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'X-Response-Time'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>cost<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">ms</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><blockquote><p>如果想要关闭某个中间件则可以直接在config.js文件中配置</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">bodyParser</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">// 这里的bodyParser 为中间件的名称</span>
+    <span class="token literal-property property">enable</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">match</span><span class="token operator">:</span> <span class="token comment">// string ｜ regxp ｜ function  可以根据条件匹配来是否，执行这个中间件</span>
+    <span class="token literal-property property">ignore</span><span class="token operator">:</span> <span class="token comment">// string ｜ regxp ｜ function  可以根据条件匹配来是否，执行这个中间件 (与match 互斥不可同时使用)</span>
+    <span class="token comment">// 字符串：当参数为字符串类型时，配置的是一个 URL 的路径前缀，所有以配置的字符串作为前缀的 URL 都会匹配上。当然，你也可以直接使用字符串数组。</span>
+    <span class="token comment">// 正则：当参数为正则时，直接匹配满足正则验证的 URL 的路径。</span>
+    <span class="token comment">// 函数：当参数为一个函数时，会将请求上下文传递给这个函数，最终取函数返回的结果（true/false）来判断是否匹配。</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h1 id="controller"><a href="#controller" class="header-anchor">#</a> Controller</h1> <div class="language-js extra-class"><pre class="language-js"><code>
+</code></pre></div><h1 id="application"><a href="#application" class="header-anchor">#</a> application</h1> <div class="language-js extra-class"><pre class="language-js"><code> <span class="token comment">//在某些非用户请求的场景下，我们也需要访问到 Context，此时可以通过 Application 的 createAnonymousContext() 方法获取：</span>
+ <span class="token keyword">const</span> ctx <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">createAnonymousContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token keyword">await</span> ctx<span class="token punctuation">.</span>service<span class="token punctuation">.</span>user<span class="token punctuation">.</span><span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h1 id="context"><a href="#context" class="header-anchor">#</a> context</h1> <div class="language-js extra-class"><pre class="language-js"><code> <span class="token comment">// 通过httpClient 发起请求</span>
+ <span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span>ctx<span class="token punctuation">.</span><span class="token function">curl</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+ <span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span>ctx<span class="token punctuation">.</span><span class="token function">runInBackground</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token comment">//有些时候，我们在处理完用户请求后，希望立即返回响应，但同时需要异步执行一些操作。</span>
+
+<span class="token comment">// app/controller/trade.js</span>
+<span class="token keyword">class</span> <span class="token class-name">TradeController</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span> <span class="token punctuation">{</span>
+  <span class="token keyword">async</span> <span class="token function">buy</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> goods <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> ctx<span class="token punctuation">.</span>service<span class="token punctuation">.</span>trade<span class="token punctuation">.</span><span class="token function">buy</span><span class="token punctuation">(</span>goods<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 下单后需要进行一次核对，且不阻塞当前请求</span>
+    ctx<span class="token punctuation">.</span><span class="token function">runInBackground</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 这里面的异常都会统统被 Backgroud 捕获掉，并打印错误日志</span>
+      <span class="token keyword">await</span> ctx<span class="token punctuation">.</span>service<span class="token punctuation">.</span>trade<span class="token punctuation">.</span><span class="token function">check</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">'已下单'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+
+ <span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span>ctx<span class="token punctuation">.</span>queries
+ <span class="token comment">//如果你的系统设计允许用户传递相同的 key（不推荐），可以使用 ctx.queries：</span>
+
+<span class="token comment">// GET /api/user?sort=name&amp;id=2&amp;id=3</span>
+<span class="token keyword">class</span> <span class="token class-name">UserController</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span> <span class="token punctuation">{</span>
+  <span class="token keyword">async</span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>ctx<span class="token punctuation">.</span>queries<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// { sort: [ 'name' ], id: [ '2', '3' ] }</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+queries<span class="token punctuation">.</span>id <span class="token operator">===</span> <span class="token punctuation">[</span> <span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">]</span>。
+ctx<span class="token punctuation">.</span>queries 的属性一定是数组类型，如 queries<span class="token punctuation">.</span>name <span class="token operator">===</span> <span class="token punctuation">[</span> <span class="token string">'sort'</span> <span class="token punctuation">]</span>。
+<span class="token comment">// 如果你确定只会传递一个，则应该使用 query.sort 而不是 queries.sort。</span>
+
+
+ <span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span>ctx<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+<span class="token comment">//获取请求 Header 信息。</span>
+
+<span class="token comment">// 由于 HTTP 协议中 Header 是忽略大小写的，因此 ctx.headers 中的 Key 一律转为小写。</span>
+
+<span class="token comment">// 一般我们推荐使用 ctx.get(name) 来获取对应的 Header，它会忽略大小写。</span>
+
+ctx<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'User-Agent'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// (推荐使用)</span>
+
+ctx<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'user-agent'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 取不到值</span>
+ctx<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'User-Agent'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/sdk-guid/assets/js/app.89ed8e5d.js" defer></script><script src="/sdk-guid/assets/js/2.3c2e6582.js" defer></script><script src="/sdk-guid/assets/js/9.e68097ac.js" defer></script>
+  </body>
+</html>
